@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css?family=Black+And+White+Picture");
+/* make sure to select a new google font and use it for your header */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+html{
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'Black And White picture', sans-serif;
+}
+main{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #7C7C7C;
+}
+header{
+    /* Photo by Jeremy Bishop on https://unsplash.com/search/photos/dogs */
+    background-image: url(../img/med/doggo.jpg);
+    background-size: 100% auto;
+    background-position: center center;
+}
+header h1{
+    font-size: 4rem;
+    line-height: 4rem;
+    padding: 1rem 1rem;
+    color: rgba(250,250,250, 0.7);
+    text-shadow: 2px 2px 4px #555555;
+    vertical-align: top;
+    text-align: right;
+    min-height: 12rem;
+}
+header img{
+    width: 15%;
+    float:left;
+    margin-right: 1rem;
+}
+form{
+    padding: 1rem 1rem 2rem;
+}
+.form-box{
+    padding: 0.25rem 0 1rem;
+}
+label{
+    display: block;
+    margin: 0;
+    font-size: 1rem;
+    color: #D64B4F;
+}
+input{
+    margin:0;
+    font-size: 1rem;
+    padding: 0.2rem 1rem;
+    width: 100%;
+    color: #888888;
+}
+input#min.price::after,
+input.price#max::after{
+    content: "$" attr(data-price);
+    display: block;
+    margin-top: -1.5rem;
+    color: #E3696C;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #D64B4F;
+  border-radius: 5px;
+}
+input[type=range]::-webkit-slider-thumb {
+  border: 1px solid #D64B4F;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #E3696C;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+
+.search-btn{
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0.25rem 1rem;
+    background-color: #D64B4F;
+    color: #D0D0D0;
+}
+@media all and (min-width:650px){
+    form{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .form-box{
+        flex-basis: 100%;
+    }
+    .form-box.check-in,
+    .form-box.check-out,
+    .form-box.min-price,
+    .form-box.max-price,
+    .form-box.dogs,
+    .form-box.search{
+        flex-basis: 50%;
+    }
+    .form-box.search{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items:flex-end;
+    }
+    .form-box.dogs,
+    .form-box.min-price,
+    .form-box.max-price{
+        padding-right: 1rem;
+    }
+}
+@media all and (min-width:1000px){
+    main{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        max-width: 1200px;
+    }
+    header{
+        flex-basis: 30%;
+        background-size: auto 100%;
+    }
+    form{
+        flex-basis: 70%;
+    }
+}
